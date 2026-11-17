@@ -115,6 +115,29 @@
     .m-give-tags strong { display: block; color: var(--navy); font-size: 16px; font-weight: 700; }
     .m-give-tags span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.8; }
     @media (max-width: 720px) { .m-give { grid-template-columns: 1fr; } }
+    /* 11/17 最初の画面を宮本さん＋公式アンバサダーに */
+    .page-hero.page-hero--amb {
+      background:
+        linear-gradient(90deg, rgba(7,20,38,.97) 0%, rgba(7,20,38,.88) 36%, rgba(11,31,58,.35) 64%, rgba(11,31,58,0) 82%),
+        url("assets/ambassador-cutout.webp?v=20261117") right bottom / auto 100% no-repeat,
+        radial-gradient(120% 140% at 82% 30%, #1f3d6b 0%, #0b1f3a 55%, #071426 100%);
+    }
+    .amb-badge { display: inline-flex; align-items: center; gap: 12px; justify-self: start; padding: 8px 18px 8px 8px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; background: rgba(7,20,38,.45); }
+    .amb-badge img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; display: block; }
+    .amb-badge span { display: grid; gap: 2px; line-height: 1.3; }
+    .amb-badge small { color: #e3c987; font-size: 10px; font-weight: 800; letter-spacing: .18em; }
+    .amb-badge b { color: #fff; font-size: 13px; font-weight: 700; }
+    @media (max-width: 860px) {
+      .page-hero.page-hero--amb {
+        background:
+          linear-gradient(0deg, rgba(7,20,38,.97) 0%, rgba(7,20,38,.9) 42%, rgba(11,31,58,.2) 78%),
+          url("assets/ambassador-cutout.webp?v=20261117") 72% top / auto 72% no-repeat,
+          radial-gradient(120% 140% at 70% 20%, #1f3d6b 0%, #0b1f3a 55%, #071426 100%);
+      }
+    }
+    /* 11/17 価値を2つに */
+    .m-pillars.m-pillars--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 860px) { .m-pillars.m-pillars--2 { grid-template-columns: 1fr; } }
   </style>
   <script>document.documentElement.classList.add('js');</script>
 
@@ -168,12 +191,13 @@
   </header>
 
   <main>
-    <section class="page-hero" data-screen-label="メディアヒーロー">
+    <section class="page-hero page-hero--amb" data-screen-label="メディアヒーロー">
       <div class="container">
-        <nav class="breadcrumb" aria-label="パンくず"><a href="index.html">HOME</a> <span>/</span> <span>メディア事業</span></nav>
+        <nav class="breadcrumb" aria-label="パンくず"><a href="/">HOME</a> <span>/</span> <span>メディア事業</span></nav>
         <p class="eyebrow" style="color:#e3c987;">Media Business</p>
+        <div class="amb-badge"><img src="assets/ambassador-face.png?v=20261117" alt="" width="40" height="40"><span><small>OFFICIAL AMBASSADOR</small><b>元読売ジャイアンツ 宮本 和知 氏</b></span></div>
         <h1 style="font-size:clamp(34px,5.4vw,74px);"><span class="nw">ものづくりセレクト</span><wbr><span class="nw">100選</span></h1>
-        <p>地元の製造業の企業と地元で働きたい人の、一生に一度の出会いを作ります。</p>
+        <p>製造業に特化して、動画で働くリアルを知ってもらいながら採用応募につなげる、日本唯一のプラットフォームです。</p>
       </div>
     </section>
 
@@ -182,18 +206,12 @@
         <div class="media-feature reveal">
           <div class="media-feature-visual">
             <a href="https://jimoto-syuusyoku.com/" target="_blank" rel="noopener" aria-label="ものづくりセレクト100のサイトを開く" style="display:block;">
-              <img src="assets/jimoto-top3.jpg" alt="ものづくりセレクト100 サイト" style="width:100%;height:auto;aspect-ratio:auto;object-fit:contain;background:#fff;display:block;">
+              <img src="assets/jimoto-top3.jpg?v=20261117" alt="ものづくりセレクト100 サイト" style="width:100%;height:auto;aspect-ratio:auto;object-fit:contain;background:#fff;display:block;">
             </a>
           </div>
           <div class="media-feature-body">
             <p class="eyebrow">What is ものづくりセレクト100</p>
-            <h3 class="media-feature-title">取材・編集した魅力を、Webサイト・動画・イベントへ。</h3>
-            <p class="media-feature-lead">SNS運用の代行にとどまらず、Alpsは自社メディア「<span class="nw">ものづくり</span><wbr><span class="nw">セレクト100</span>」を運営しています。企業を第三者の視点で取材・編集し、Webサイト・SNS発信・動画・イベントへ展開。一過性で終わらせず、継続的に知ってもらう仕組みをつくります。</p>
-            <ul class="media-list">
-              <li><strong>第三者視点の編集</strong><span>自社発信では出せない客観性と信頼感。</span></li>
-              <li><strong>学生・求職者へのネットワーク</strong><span>届けたい層との接点をすでに持つ。</span></li>
-              <li><strong>認知から採用まで一気通貫</strong><span>掲載・SNS・動画・イベントを掛け合わせる。</span></li>
-            </ul>
+            <p class="media-feature-lead">SNS運用の代行にとどまらず、Alpsは自社メディア「<span class="nw">ものづくり</span><wbr><span class="nw">セレクト100</span>」を運営しています。</p>
             <a class="btn btn-primary" href="https://jimoto-syuusyoku.com/" target="_blank" rel="noopener">ものづくりセレクト100を見る <em aria-hidden="true">↗</em></a>
           </div>
         </div>
@@ -212,26 +230,20 @@
 
         <div class="m-lockup reveal">
           <span class="m-en">For Your Future</span>
-          <p class="m-jp"><span class="nw">ものづくり</span><wbr><span class="nw">セレクト100</span>が提供する、<wbr><span class="nw">3つの価値。</span></p>
+          <p class="m-jp"><span class="nw">ものづくり</span><wbr><span class="nw">セレクト100</span>が提供する、<wbr><span class="nw">2つの価値。</span></p>
         </div>
-        <div class="m-pillars reveal">
+        <div class="m-pillars m-pillars--2 reveal">
+          <div class="m-pillar">
+            <span class="m-en">Platform</span>
+            <div class="m-fig">日本唯一</div>
+            <h3>製造業×動画の採用プラットフォーム</h3>
+            <p>製造業に特化して、動画で働くリアルを知ってもらいながら、採用応募につなげます。</p>
+          </div>
           <div class="m-pillar">
             <span class="m-en">Branding</span>
-            <div class="m-fig"><span class="js-count">365</span><small>日</small></div>
-            <h3>認定企業としての社会的信頼</h3>
-            <p>「<span class="nw">ものづくり</span><wbr><span class="nw">セレクト100</span> 認定」で採用ブランドを確立。求職者・取引先・社員の誇りに直結します。</p>
-          </div>
-          <div class="m-pillar">
-            <span class="m-en">Recruiting</span>
-            <div class="m-fig"><span class="js-count">+300</span><small>%</small></div>
-            <h3>応募数と採用成果の最大化</h3>
-            <p>メディア掲載・動画・記事を通じて、価値観に共感する質の高い母集団を継続的に形成します。</p>
-          </div>
-          <div class="m-pillar">
-            <span class="m-en">Meeting</span>
             <div class="m-fig"><span class="js-count">100</span><small>社限定</small></div>
-            <h3>学生との出会いを生む</h3>
-            <p>就職意欲の高い学生が集まる、掲載企業限定のミートアップで効率的な接点を創出します。</p>
+            <h3>各都道府県100社限定のブランディング</h3>
+            <p>掲載できるのは、各都道府県100社まで。「選ばれた企業」として、求職者や取引先に伝わります。</p>
           </div>
         </div>
       </div>
@@ -268,23 +280,19 @@
       </div>
     </section>
 
-    <!-- ===== 6つのサポート ===== -->
-    <section class="section" data-kicker="SUPPORT" data-screen-label="6つのサポート">
+    <!-- ===== 2つのサポート ===== -->
+    <section class="section" data-kicker="SUPPORT" data-screen-label="2つのサポート">
       <div class="container">
         <div class="section-head reveal">
           <div>
             <p class="eyebrow">All-in-One Support</p>
-            <h2 class="section-title">ただの採用支援じゃない、6つのサポート。</h2>
+            <h2 class="section-title">ただの採用支援じゃない、2つのサポート。</h2>
           </div>
-          <p class="section-copy">掲載して終わりではありません。ブランディングから採用、学生との出会い、経営者ネットワークまで。御社の採用力を多面的に支えます。</p>
+          <p class="section-copy">掲載して終わりではありません。動画での発信から採用の設計まで、御社の採用を支えます。</p>
         </div>
-        <div class="grid grid-3 reveal">
-          <a class="card" href="https://jimoto-syuusyoku.com/" target="_blank" rel="noopener"><span class="card-number">CORE 01</span><h3>メディア掲載</h3><p>地元の製造業から100社限定の希少枠。「選ばれた企業」というポジションが、求職者の第一印象を変えます。掲載期間は1年間。</p><span class="site-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>掲載サイトを見る <em aria-hidden="true">→</em></span></a>
-          <article class="card"><span class="card-number">SUPPORT 02</span><h3>採用コンサル</h3><p>専任担当が月1回のオンライン面談で伴走。応募データや選考フローを診断し、求人原稿・面接フローまで一緒に磨きます。</p></article>
-          <a class="card" href="https://youtube.com/channel/UCRNFqnMFHb-Qp9sa0mqdWAQ?si=ZmJdpICuqnjxCq0V" target="_blank" rel="noopener"><span class="card-number">CREATIVE 03</span><h3>YouTube対談・SNSでPR</h3><p>SNS運用のプロが企画から編集まで一貫対応。代表の熱量・人柄を引き出し、文字では伝わらない魅力を動画で可視化します。</p><span class="yt-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTubeを見る</span></a>
-          <article class="card"><span class="card-number">EVENT 04</span><h3>ミートアップ100選</h3><p>意欲の高い学生を厳選集客し、卓単位でじっくり対話できる掲載企業限定イベント。本当に合う学生に出会えます。</p></article>
-          <article class="card"><span class="card-number">NETWORK 05</span><h3>経営者交流会</h3><p>業界・地域を超えた選定企業の経営者ネットワーク。採用の成功事例の共有から、新たなBtoBの出会いまで広がります。</p></article>
-          <article class="card"><span class="card-number">BRAND 06</span><h3>認定エンブレムの贈呈</h3><p>第三者認証ブランドとして公式エンブレムを無償提供（PNG・JPG・SVG）。採用ページや名刺など、あらゆる接点で活用できます。</p></article>
+        <div class="grid grid-2 reveal">
+          <a class="card" href="https://youtube.com/channel/UCRNFqnMFHb-Qp9sa0mqdWAQ?si=ZmJdpICuqnjxCq0V" target="_blank" rel="noopener"><span class="card-number">CORE 01</span><h3>動画での採用活動</h3><p>YouTubeでの動画発信と、<span class="nw">ものづくり</span><wbr><span class="nw">セレクト100</span>への掲載を掛け合わせて、働くリアルを求職者に届けます。</p><span class="yt-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTubeを見る</span></a>
+          <article class="card"><span class="card-number">SUPPORT 02</span><h3>採用全体の設計の見直し</h3><p>貴社の採用担当として、求人原稿から選考・面接の流れまで、採用全体の設計を一緒に見直します。</p></article>
         </div>
       </div>
     </section>
