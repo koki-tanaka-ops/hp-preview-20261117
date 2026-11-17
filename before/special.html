@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>メディア事業｜株式会社Alps｜地元就職セレクト100選</title>
+  <meta name="description" content="株式会社Alpsの自社メディア事業。地元就職セレクト100選（都道府県ごと地元で輝く100社を選出する採用メディア）を通じて、地元優良企業と地元で働きたい人の一生に一度の出会いを作ります。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="alps.css">
+  <style id="media-extra">
+    /* ===== メディア事業ページ 専用コンポーネント ===== */
+    .m-lockup { display: grid; gap: 10px; margin-bottom: clamp(28px, 3vw, 44px); }
+    .m-lockup .m-jp {
+      margin: 0; color: var(--navy);
+      font-family: "Noto Serif JP", serif; font-weight: 600;
+      font-size: clamp(30px, 4vw, 52px); line-height: 1.3;
+      text-wrap: pretty; word-break: auto-phrase;
+    }
+    .m-lockup .m-en {
+      color: var(--gold-deep); font-size: 12px; font-weight: 800;
+      letter-spacing: .22em; text-transform: uppercase;
+    }
+
+    /* 3つの価値 */
+    .m-pillars {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(18px, 2.2vw, 28px); margin-top: clamp(34px, 4vw, 54px);
+    }
+    .m-pillar {
+      position: relative; padding: clamp(28px, 3vw, 40px);
+      background: #fff; border: 1px solid rgba(11,31,58,.12);
+      display: flex; flex-direction: column;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    .m-pillar:hover { transform: translateY(-6px); border-color: rgba(15,45,92,.3); box-shadow: 0 26px 64px rgba(11,31,58,.1); }
+    .m-pillar .m-en { color: var(--gold-deep); font-size: 11px; font-weight: 800; letter-spacing: .18em; }
+    .m-pillar .m-fig {
+      margin: 14px 0 4px; color: var(--navy);
+      font-family: "Noto Serif JP", serif; font-weight: 600; line-height: 1;
+      font-size: clamp(38px, 4.2vw, 58px);
+    }
+    .m-pillar .m-fig small { font-size: .42em; font-weight: 700; margin-left: 4px; color: var(--gold-deep); font-family: "Noto Sans JP", sans-serif; }
+    .m-pillar h3 { margin: 16px 0 10px; color: var(--navy); font-size: 19px; font-weight: 700; line-height: 1.5; }
+    .m-pillar p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
+
+    /* Before / After 数字 */
+    .m-metrics {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px; margin-top: clamp(34px, 4vw, 52px);
+      background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.16);
+    }
+    .m-metric { background: transparent; padding: clamp(30px, 3vw, 46px) clamp(20px, 2vw, 30px); text-align: center; }
+    .m-metric .m-num {
+      display: block; font-family: "Noto Serif JP", serif; font-weight: 600; line-height: 1;
+      font-size: clamp(46px, 5.4vw, 76px);
+      color: transparent; background: linear-gradient(120deg, var(--gold-soft), var(--gold));
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .m-metric .m-label { display: block; margin-top: 14px; color: #fff; font-size: 16px; font-weight: 700; }
+    .m-metric .m-sub { display: block; margin-top: 8px; color: rgba(255,255,255,.66); font-size: 13px; line-height: 1.7; }
+    .m-note { margin: 24px 0 0; color: rgba(255,255,255,.5); font-size: 12px; line-height: 1.7; }
+
+    /* 料金プラン */
+    .m-plan {
+      display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      gap: clamp(30px, 4vw, 60px); align-items: center;
+      padding: clamp(32px, 4vw, 56px); background: #0a1d36; color: #fff;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .m-plan-price { border-right: 1px solid rgba(255,255,255,.16); padding-right: clamp(20px, 3vw, 40px); }
+    .m-plan-price .m-en { color: var(--gold-soft); font-size: 11px; font-weight: 800; letter-spacing: .2em; }
+    .m-plan-price .m-amount { display: flex; align-items: baseline; gap: 6px; margin: 12px 0 6px; color: #fff; }
+    .m-plan-price .m-amount b { font-family: "Noto Serif JP", serif; font-size: clamp(54px, 7vw, 92px); font-weight: 600; line-height: 1; }
+    .m-plan-price .m-amount span { font-size: 18px; font-weight: 700; color: rgba(255,255,255,.8); }
+    .m-plan-price .m-fineprint { margin: 12px 0 0; color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.8; }
+    .m-plan-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; }
+    .m-plan-list li { position: relative; padding-left: 28px; font-size: 14px; font-weight: 600; line-height: 1.6; color: rgba(255,255,255,.92); }
+    .m-plan-list li::before {
+      content: "✓"; position: absolute; left: 0; top: 0;
+      width: 19px; height: 19px; display: grid; place-items: center;
+      border-radius: 999px; background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+      color: #0a1d36; font-size: 11px; font-weight: 900;
+    }
+    @media (max-width: 860px) {
+      .m-pillars, .m-metrics { grid-template-columns: 1fr; }
+      .m-metrics { gap: 1px; }
+      .m-plan { grid-template-columns: 1fr; gap: 28px; }
+      .m-plan-price { border-right: 0; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); padding-bottom: 24px; }
+      .m-plan-list { grid-template-columns: 1fr; }
+    }
+
+    /* 公式アンバサダー */
+    .m-amb { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: clamp(30px, 4vw, 64px); align-items: center; }
+    .m-amb .ph { min-height: clamp(300px, 36vw, 420px); border-radius: 3px; background: repeating-linear-gradient(135deg, #122847 0 14px, #0e2240 14px 28px); color: rgba(255,255,255,.5); }
+    .m-amb-body .m-en { color: var(--gold-soft); font-size: 11px; font-weight: 800; letter-spacing: .2em; }
+    .m-amb-body h3 { margin: 14px 0 6px; color: #fff; font-family: "Noto Serif JP", serif; font-size: clamp(26px, 3vw, 40px); font-weight: 600; line-height: 1.3; }
+    .m-amb-body .m-amb-role { margin: 0 0 20px; color: var(--gold-soft); font-size: 14px; font-weight: 700; }
+    .m-amb-body p { margin: 0 0 16px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 2; }
+    .m-amb-body p:last-child { margin-bottom: 0; }
+    @media (max-width: 860px) { .m-amb { grid-template-columns: 1fr; } }
+
+    /* 選定基準 2カラム */
+    .m-crit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); }
+    .m-crit h3 { margin: 0 0 22px; color: var(--navy); font-size: 18px; font-weight: 700; letter-spacing: .04em; }
+    .m-crit h3 em { font-style: normal; color: var(--gold-deep); font-size: 12px; font-weight: 800; letter-spacing: .14em; margin-left: 10px; }
+    @media (max-width: 720px) { .m-crit { grid-template-columns: 1fr; } }
+
+    /* 社会貢献 */
+    .m-give { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+    .m-give-tags { display: grid; gap: 16px; }
+    .m-give-tags div { padding: 18px 22px; background: #fff; border: 1px solid rgba(11,31,58,.12); }
+    .m-give-tags strong { display: block; color: var(--navy); font-size: 16px; font-weight: 700; }
+    .m-give-tags span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    @media (max-width: 720px) { .m-give { grid-template-columns: 1fr; } }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+
+<link rel="canonical" href="special.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="株式会社Alps">
+<meta property="og:title" content="メディア事業｜株式会社Alps｜地元就職セレクト100選">
+<meta property="og:description" content="株式会社Alpsの自社メディア事業。地元就職セレクト100選（都道府県ごと地元で輝く100社を選出する採用メディア）を通じて、地元優良企業と地元で働きたい人の一生に一度の出会いを作ります。">
+<meta property="og:url" content="https://alpssns.com/special/">
+<meta property="og:image" content="assets/hero-minatomirai.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://alpssns.com/wp-content/uploads/2025/09/cropped-2b76fde2a64d796f07b5e4de11cb1e52-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://alpssns.com/wp-content/uploads/2025/09/cropped-2b76fde2a64d796f07b5e4de11cb1e52-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://alpssns.com/wp-content/uploads/2025/09/cropped-2b76fde2a64d796f07b5e4de11cb1e52-180x180.jpg" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand brand-logo-link" href="index.html" aria-label="株式会社Alps ホーム">
+        <img class="brand-logo" src="assets/alps-logo-full.png" alt="株式会社Alps">
+      </a>
+      <nav class="nav" aria-label="主要メニュー">
+        <a href="index.html">トップページ</a>
+        <a href="work.html">SNS事業</a>
+        <a href="special.html">メディア事業</a>
+        <a href="about.html">当社について</a>
+        <a href="owner.html">代表</a>
+        <a href="faq.html">FAQ</a>
+        <a href="https://alpssns.com/blog/">ブログ</a>
+      </nav>
+      <div class="header-actions">
+        <a class="tel" href="tel:09012193825">090-1219-3825</a>
+        <a class="btn btn-primary" href="index.html#contact">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="モバイルメニュー">
+      <a href="index.html">トップページ</a>
+      <a href="work.html">SNS事業</a>
+      <a href="special.html">メディア事業</a>
+      <a href="about.html">当社について</a>
+      <a href="owner.html">代表</a>
+      <a href="faq.html">FAQ</a>
+        <a href="https://alpssns.com/blog/">ブログ</a>
+      <a class="mobile-nav__cta" href="index.html#contact">お問い合わせ</a>
+      <a class="mobile-nav__tel" href="tel:09012193825">090-1219-3825</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" data-screen-label="メディアヒーロー">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="パンくず"><a href="index.html">HOME</a> <span>/</span> <span>メディア事業</span></nav>
+        <p class="eyebrow" style="color:#e3c987;">Media Business</p>
+        <h1>地元就職セレクト100選</h1>
+        <p>地元優良企業と地元で働きたい人の、一生に一度の出会いを作ります。</p>
+      </div>
+    </section>
+
+    <section class="section" data-kicker="MEDIA" data-screen-label="メディア事業とは">
+      <div class="container">
+        <div class="media-feature reveal">
+          <div class="media-feature-visual">
+            <a href="https://jimoto-syuusyoku.com/" target="_blank" rel="noopener" aria-label="地元就職セレクト100選のサイトを開く" style="display:block;">
+              <img src="assets/jimoto-top3.jpg" alt="地元就職セレクト100選 サイト" style="width:100%;height:auto;aspect-ratio:auto;object-fit:contain;background:#fff;display:block;">
+            </a>
+          </div>
+          <div class="media-feature-body">
+            <p class="eyebrow">What is 地元就職セレクト100選</p>
+            <h3 class="media-feature-title">取材・編集した魅力を、Webサイト・動画・イベントへ。</h3>
+            <p class="media-feature-lead">SNS運用の代行にとどまらず、Alpsは自社メディア「地元就職セレクト100選」を運営しています。企業を第三者の視点で取材・編集し、Webサイト・SNS発信・動画・イベントへ展開。一過性で終わらせず、継続的に知ってもらう仕組みをつくります。</p>
+            <ul class="media-list">
+              <li><strong>第三者視点の編集</strong><span>自社発信では出せない客観性と信頼感。</span></li>
+              <li><strong>学生・求職者へのネットワーク</strong><span>届けたい層との接点をすでに持つ。</span></li>
+              <li><strong>認知から採用まで一気通貫</strong><span>掲載・SNS・動画・イベントを掛け合わせる。</span></li>
+            </ul>
+            <a class="btn btn-primary" href="https://jimoto-syuusyoku.com/" target="_blank" rel="noopener">地元就職セレクト100選を見る <em aria-hidden="true">↗</em></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 地元就職セレクト ===== -->
+    <section class="section section-soft" data-kicker="SELECT" data-screen-label="地元就職セレクト">
+      <div class="container">
+        <div class="band-head reveal">
+          <img class="band-head__media" src="assets/photo-sns-meeting.jpg" alt="">
+          <p class="eyebrow">Recruit Media Service</p>
+          <h2 class="section-title">地元就職セレクト100選</h2>
+          <p class="band-lead">都道府県ごと、地元で輝く100社。<br>各エリアに数十万社ある中から、わずか100社だけが選ばれる採用メディアです。「FIND LOCAL, FIND FUTURE」——地域で輝く企業と、次世代の若者をつなぐ架け橋になります。</p>
+        </div>
+
+        <div class="m-lockup reveal">
+          <span class="m-en">For Your Future</span>
+          <p class="m-jp">地元就職セレクトが提供する、3つの価値。</p>
+        </div>
+        <div class="m-pillars reveal">
+          <div class="m-pillar">
+            <span class="m-en">Branding</span>
+            <div class="m-fig"><span class="js-count">365</span><small>日</small></div>
+            <h3>認定企業としての社会的信頼</h3>
+            <p>「100選認定」で採用ブランドを確立。求職者・取引先・社員の誇りに直結します。</p>
+          </div>
+          <div class="m-pillar">
+            <span class="m-en">Recruiting</span>
+            <div class="m-fig"><span class="js-count">+300</span><small>%</small></div>
+            <h3>応募数と採用成果の最大化</h3>
+            <p>メディア掲載・動画・記事を通じて、価値観に共感する質の高い母集団を継続的に形成します。</p>
+          </div>
+          <div class="m-pillar">
+            <span class="m-en">Meeting</span>
+            <div class="m-fig"><span class="js-count">100</span><small>社限定</small></div>
+            <h3>学生との出会いを生む</h3>
+            <p>就職意欲の高い学生が集まる、掲載企業限定のミートアップで効率的な接点を創出します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Before / After 数字 ===== -->
+    <section class="section section-dark" data-kicker="RESULT" data-screen-label="導入効果">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Before / After</p>
+            <h2 class="section-title nowrap-title">掲載したら、こう変わる。</h2>
+          </div>
+          <p class="section-copy">中小企業に多い採用課題が、地元就職セレクト導入後にどう変化するか。応募の「量」と「質」、そしてコストまでを改善します。</p>
+        </div>
+        <div class="m-metrics reveal">
+          <div class="m-metric">
+            <span class="m-num js-count">+200%</span>
+            <span class="m-label">月間応募数</span>
+            <span class="m-sub">1〜3件 / 月 → 6〜10件 / 月</span>
+          </div>
+          <div class="m-metric">
+            <span class="m-num js-count">−75%</span>
+            <span class="m-label">採用ミスマッチ率</span>
+            <span class="m-sub">30〜40% → 10%以下</span>
+          </div>
+          <div class="m-metric">
+            <span class="m-num js-count">−66%</span>
+            <span class="m-label">採用単価</span>
+            <span class="m-sub">100〜150万円 → 30〜50万円</span>
+          </div>
+        </div>
+        <p class="m-note reveal">※ 数値は中小企業の業界平均および当社支援企業の傾向値です。導入企業の業種・規模・採用ターゲットにより異なります。</p>
+      </div>
+    </section>
+
+    <!-- ===== 6つのサポート ===== -->
+    <section class="section" data-kicker="SUPPORT" data-screen-label="6つのサポート">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">All-in-One Support</p>
+            <h2 class="section-title">ただの採用支援じゃない、6つのサポート。</h2>
+          </div>
+          <p class="section-copy">掲載して終わりではありません。ブランディングから採用、学生との出会い、経営者ネットワークまで。御社の採用力を多面的に支えます。</p>
+        </div>
+        <div class="grid grid-3 reveal">
+          <a class="card" href="https://jimoto-syuusyoku.com/" target="_blank" rel="noopener"><span class="card-number">CORE 01</span><h3>メディア掲載</h3><p>各エリア100社限定の希少枠。「選ばれた企業」というポジションが、求職者の第一印象を変えます。掲載期間は1年間。</p><span class="site-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>掲載サイトを見る <em aria-hidden="true">→</em></span></a>
+          <article class="card"><span class="card-number">SUPPORT 02</span><h3>採用コンサル</h3><p>専任担当が月1回のオンライン面談で伴走。応募データや選考フローを診断し、求人原稿・面接フローまで一緒に磨きます。</p></article>
+          <a class="card" href="https://youtube.com/channel/UCRNFqnMFHb-Qp9sa0mqdWAQ?si=ZmJdpICuqnjxCq0V" target="_blank" rel="noopener"><span class="card-number">CREATIVE 03</span><h3>YouTube対談・SNSでPR</h3><p>SNS運用のプロが企画から編集まで一貫対応。代表の熱量・人柄を引き出し、文字では伝わらない魅力を動画で可視化します。</p><span class="yt-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTubeを見る</span></a>
+          <article class="card"><span class="card-number">EVENT 04</span><h3>ミートアップ100選</h3><p>意欲の高い学生を厳選集客し、卓単位でじっくり対話できる掲載企業限定イベント。本当に合う学生に出会えます。</p></article>
+          <article class="card"><span class="card-number">NETWORK 05</span><h3>経営者交流会</h3><p>業界・地域を超えた選定企業の経営者ネットワーク。採用の成功事例の共有から、新たなBtoBの出会いまで広がります。</p></article>
+          <article class="card"><span class="card-number">BRAND 06</span><h3>認定エンブレムの贈呈</h3><p>第三者認証ブランドとして公式エンブレムを無償提供（PNG・JPG・SVG）。採用ページや名刺など、あらゆる接点で活用できます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 公式アンバサダー ===== -->
+    <section class="section section-dark" data-kicker="AMBASSADOR" data-screen-label="公式アンバサダー">
+      <div class="container">
+        <div class="m-amb reveal">
+          <div style="border-radius:3px;overflow:hidden;align-self:stretch;"><img src="assets/ambassador-miyamoto.jpg" alt="公式アンバサダー 宮本 和知氏（右）と代表 魚崎　仁潔（左）" style="width:100%;height:100%;min-height:clamp(320px,38vw,460px);object-fit:cover;display:block;"></div>
+          <div class="m-amb-body">
+            <span class="m-en">Official Ambassador</span>
+            <h3>宮本 和知</h3>
+            <p class="m-amb-role">地元就職セレクト 公式アンバサダー／元読売ジャイアンツ</p>
+            <p>読売巨人軍の投手として長年活躍された後、スポーツキャスター・野球解説者として第一線でご活躍。投手チーフコーチ、女子チーム初代監督を歴任し、現在は球団社長付アドバイザーを務められています。</p>
+            <p>「スポーツで培った経験や人間力を、次のステージで活かしたい若い方々の挑戦を応援したい。地元には、そうした皆さんを温かく迎え入れてくれる素晴らしい企業がたくさんある」——その理念に共感し、活動を後押しいただいています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 選定基準 ===== -->
+    <section class="section" data-kicker="STANDARD" data-screen-label="選定基準">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Selection Standard</p>
+            <h2 class="section-title">100社の品質を担保する、選定基準。</h2>
+          </div>
+          <p class="section-copy">数十万社の中から、これだけの基準をクリアした企業だけが地元就職セレクトに掲載されます。希少性こそが、求職者からの信頼につながります。</p>
+        </div>
+        <div class="m-crit reveal">
+          <div>
+            <h3>必須条件 <em>MUST</em></h3>
+            <ul class="media-list">
+              <li><strong>該当エリアに本社があり、納税している</strong><span>地域に根ざして事業を営んでいること。</span></li>
+              <li><strong>該当エリア内で雇用を生み出している</strong><span>地元の働く場をつくっていること。</span></li>
+              <li><strong>原則、黒字経営である</strong><span>戦略的赤字は除く、健全な経営基盤。</span></li>
+              <li><strong>地元に愛着があり、支持されている</strong><span>反社会的勢力と無関係であること。</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>審査基準 <em>EVALUATION</em></h3>
+            <ul class="media-list">
+              <li><strong>地域密着と地元貢献</strong><span>地元の経済・社会への具体的な貢献。</span></li>
+              <li><strong>働きやすさと若手成長支援</strong><span>研修・キャリア支援の充実度。</span></li>
+              <li><strong>未来へのビジョンと挑戦</strong><span>中長期計画と革新的な取り組み。</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 社会貢献 ===== -->
+    <section class="section" data-kicker="SOCIAL" data-screen-label="社会貢献">
+      <div class="container">
+        <div class="m-give reveal">
+          <div>
+            <p class="eyebrow">Social Contribution</p>
+            <h2 class="section-title" style="font-size:clamp(28px,3.4vw,44px);">掲載が、子どもたちの未来を支えます。</h2>
+            <p class="section-copy" style="max-width:none;">掲載料の一部を、子どもたちの夢と未来を支えるNPO法人「夢の宝箱」へ寄付しています。御社の採用支援が、地域の子どもたちの夢につながる——それが地元就職セレクト100選です。</p>
+            <div class="m-give-tags" style="margin-top:24px;">
+              <div><strong>学習支援プログラム</strong><span>経済的に困難な子どもたちへの教育機会を提供。</span></div>
+              <div><strong>キャリア教育</strong><span>地元企業の大人と出会う機会の創出。</span></div>
+              <div><strong>夢を育てる場づくり</strong><span>子どもたちが将来を描ける居場所をサポート。</span></div>
+            </div>
+          </div>
+          <div style="border-radius:3px;overflow:hidden;">
+            <img src="assets/children-future.jpg" alt="夢の宝箱が支援する子どもたち" style="width:100%;height:auto;display:block;border-radius:3px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Media × SNS ===== -->
+    <section class="section section-soft" data-kicker="EXPAND" data-screen-label="展開イメージ">
+      <div class="container">
+        <div class="image-showcase is-reverse reveal">
+          <img src="assets/photo-sns-meeting.jpg" alt="メディアとSNSを掛け合わせた発信">
+          <div class="image-showcase-copy">
+            <p class="eyebrow">Media × SNS</p>
+            <h3>メディア掲載と、SNS発信の掛け算。</h3>
+            <p>メディアでの取材掲載と、SNSでの継続発信。第三者視点と当事者視点の両面から伝えることで、企業の魅力は“知られる状態”へと変わります。掲載して終わりではなく、認知から興味・行動までの流れを設計します。</p>
+            <div class="visual-tags"><span>取材・記事化</span><span>SNS展開</span><span>動画制作</span><span>限定イベント</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" data-screen-label="お問い合わせ">
+      <div class="cta-inner">
+        <div class="contact-panel">
+          <div class="reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>メディアで、企業を“知られる存在”に。</h2>
+            <p>地元就職セレクトへの掲載や、メディア・SNSを活用した発信について、まずはお気軽にご相談ください。</p>
+            <p style="color:#fff;font-size:15px;font-weight:600;line-height:2;margin:18px 0 0;">TEL：<a href="tel:09012193825" style="color:#fff;">090-1219-3825</a><br>MAIL：<a href="mailto:contact@alps235.jp" style="color:var(--gold-soft);">contact@alps235.jp</a></p>
+          </div>
+          <form class="contact-form reveal" action="#" onsubmit="return false" method="POST">
+            <input type="hidden" name="action" value="alps_contact">
+            <input type="text" name="_honey" style="display:none">
+            <div class="cf-row">
+              <label>会社名<span class="req">必須</span><input type="text" name="company" required placeholder="株式会社〇〇"></label>
+              <label>お名前<span class="req">必須</span><input type="text" name="fullname" required placeholder="山田 太郎"></label>
+            </div>
+            <div class="cf-row">
+              <label>フリガナ<span class="req">必須</span><input type="text" name="kana" required placeholder="ヤマダ タロウ"></label>
+              <label>電話番号<span class="opt">任意</span><input type="tel" name="tel" placeholder="090-0000-0000"></label>
+            </div>
+            <label>メールアドレス<span class="req">必須</span><input type="email" name="email" required placeholder="you@example.com"></label>
+            <label>ご希望のメニュー<span class="req">必須</span>
+              <select name="menu" required>
+                <option value="" disabled selected>選択してください</option>
+                <option>SNS採用支援</option>
+                <option>地元就職セレクト100選（メディア掲載）</option>
+                <option>その他・ご相談</option>
+              </select>
+            </label>
+            <label>相談内容<span class="req">必須</span><textarea name="message" required placeholder="ご相談内容をご記入ください"></textarea></label>
+            <label class="cf-check"><input type="checkbox" name="agree" required> <span>個人情報の取り扱いに同意のうえ、送信します。</span></label>
+            <button class="btn btn-primary" type="submit">送信する</button>
+            <p class="cf-note">送信された内容は contact@alps235.jp に届きます。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a class="brand brand-logo-link" href="index.html" aria-label="株式会社Alps ホーム">
+          <img class="brand-logo" src="assets/alps-logo-full.png" alt="株式会社Alps" style="filter:brightness(0) invert(1);opacity:.92;">
+        </a>
+        <p>〒231-0014 神奈川県横浜市中区常盤町5-62 馬車道常盤ビル7F<br>みなとみらい線「馬車道駅」より徒歩3分 / contact@alps235.jp<br>営業時間 9:00-18:00 / 土日祝定休</p>
+      </div>
+      <nav class="footer-links" aria-label="フッターメニュー">
+        <a href="work.html">SNS事業</a>
+        <a href="special.html">メディア事業</a>
+        <a href="about.html">当社について</a>
+        <a href="owner.html">代表</a>
+        <a href="https://alpssns.com/access/">アクセス</a>
+        <a href="faq.html">FAQ</a>
+        <a href="https://alpssns.com/blog/">ブログ</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <p style="width:min(var(--max),calc(100% - 40px));margin:32px auto 0;font-size:12px;color:rgba(255,255,255,.5);"><a href="https://alpssns.com/privacy/" style="color:inherit;text-decoration:underline;">プライバシーポリシー</a>　© 株式会社Alps. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

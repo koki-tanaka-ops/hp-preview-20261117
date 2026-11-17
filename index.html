@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alps HP 変更前と変更後</title>
+<style>
+:root{--bg:#F4F6F8;--ink:#14202B;--muted:#5B6772;--line:#D5DCE2;--accent:#0B4F9C;--old:#9A3B2E;--new:#1E6B47}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Hiragino Sans",system-ui,sans-serif;font-size:14px}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;z-index:5}
+h1{font-size:15px;margin:0}
+.g{display:flex;gap:6px;flex-wrap:wrap}
+button{font:inherit;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:4px 12px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.note{color:var(--muted);font-size:12px;width:100%;margin:0}
+main{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px}
+main.one{grid-template-columns:1fr}
+.col{display:flex;flex-direction:column;gap:6px;min-width:0}
+.lab{font-weight:700;font-size:13px}
+.lab.o{color:var(--old)} .lab.n{color:var(--new)}
+.frame{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:auto;height:calc(100vh - 140px)}
+iframe{border:0;display:block;height:100%;margin:0 auto}
+.sp iframe{width:390px}
+.pc iframe{width:100%}
+</style>
+</head>
+<body>
+<header>
+  <h1>Alps HP（alpssns.com）変更前と変更後</h1>
+  <div class="g" id="pages"></div>
+  <div class="g" id="modes"></div>
+  <p class="note">左が今の本番と同じ中身、右が「ものづくりセレクト100」に直した版。どちらも中のリンクやスクロールはそのまま触れる。お問い合わせの送信は動かない（見た目だけ）</p>
+</header>
+<main id="main" class="pc">
+  <div class="col"><span class="lab o">変更前（今の本番）</span><div class="frame"><iframe id="fb" title="変更前"></iframe></div></div>
+  <div class="col"><span class="lab n">変更後</span><div class="frame"><iframe id="fa" title="変更後"></iframe></div></div>
+</main>
+<script>
+const PAGES=[["index","トップ"],["special","メディア事業（/special/）"],["work","事業内容（/work/）"],["about","会社概要（/about/）"],["owner","代表あいさつ（/owner/）"],["faq","よくある質問（/faq/）"]];
+const MODES=[["pc","PC で並べる"],["sp","スマホの幅で並べる"],["after","変更後だけ大きく"]];
+let page="index",mode="pc";
+const pg=document.getElementById("pages"),md=document.getElementById("modes"),main=document.getElementById("main");
+function render(){
+  document.getElementById("fb").src="before/"+page+".html";
+  document.getElementById("fa").src="after/"+page+".html";
+  main.className=(mode==="sp"?"sp":"pc")+(mode==="after"?" one":"");
+  main.children[0].hidden=(mode==="after");
+  [...pg.children].forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===page));
+  [...md.children].forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===mode));
+}
+PAGES.forEach(([k,l])=>{const b=document.createElement("button");b.dataset.k=k;b.textContent=l;b.onclick=()=>{page=k;render()};pg.appendChild(b)});
+MODES.forEach(([k,l])=>{const b=document.createElement("button");b.dataset.k=k;b.textContent=l;b.onclick=()=>{mode=k;render()};md.appendChild(b)});
+render();
+</script>
+</body>
+</html>
