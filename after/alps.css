@@ -2264,3 +2264,9 @@ body.cursor-ready summary, body.cursor-ready details, body.cursor-ready * { curs
 
 /* 11/16 名前などを途中で折り返さない */
 .nw { white-space: nowrap; }
+
+/* 11/19 トップの事業カード：画像を切らずに全体表示（比率 1600:711） */
+.business-card.business-card--wide { grid-template-rows: auto 1fr; }
+.business-card--wide .business-thumb { aspect-ratio: 1600 / 711; }
+.business-card--wide .business-thumb img { object-position: center; transform: none; }
+.business-card--wide:hover .business-thumb img, .business-card--wide.is-hover .business-thumb img { transform: none; }
